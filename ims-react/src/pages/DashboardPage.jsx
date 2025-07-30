@@ -135,20 +135,32 @@ const DashboardPage = () => {
             <div className="chart-container">
                 <h3>Daily Transactions</h3>
                 <ResponsiveContainer width="100%" height={400}>
-                    <LineChart data={transactionData}>
-                        <CartesianGrid strokeDasharray="3 3"/>
-                        <XAxis dataKey="day" label={{value: "Day", position: "insideBottomRight", offset: -5}}/>
-                        <YAxis/>
-                        <Tooltip/>
-                        <Legend/>
-                        <Line type={"monotone"}
-                        dataKey={selectedData}
-                        stroke="#008080"
-                        fillOpacity={0.3}
-                        fill="#008080"
-                        />
-                    </LineChart>
-                </ResponsiveContainer>
+  <LineChart
+    data={transactionData}
+    margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+  >
+    <CartesianGrid strokeDasharray="3 3" />
+    <XAxis
+      dataKey="day"
+      label={{ value: "Day", position: "insideBottomRight", offset: -5 }}
+      tick={{ fontSize: 12 }}
+      padding={{ left: 10, right: 10 }}
+      interval={0}
+      minTickGap={5}
+    />
+    <YAxis />
+    <Tooltip />
+    <Legend />
+    <Line
+      type="monotone"
+      dataKey={selectedData}
+      stroke="#008080"
+      fillOpacity={0.3}
+      fill="#008080"
+    />
+  </LineChart>
+</ResponsiveContainer>
+
 
             </div>
 
