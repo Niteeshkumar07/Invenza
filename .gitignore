@@ -1,0 +1,59 @@
+# === FRONTEND (React / Vite / CRA) ===
+
+# node modules and build
+node_modules/
+dist/
+build/
+
+# Vite / React cache
+.vite/
+.cache/
+
+# production or development env files
+.env
+.env.local
+.env.development
+.env.production
+
+# Log files
+*.log
+
+# === BACKEND (Spring Boot - Maven) ===
+
+# target folder (build output)
+target/
+
+# compiled classes and dependencies
+*.class
+*.jar
+*.war
+*.ear
+
+# local database or H2 database files
+*.h2.db
+*.mv.db
+
+# IntelliJ / Eclipse / VSCode IDE configs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# === IMAGE UPLOAD FOLDERS ===
+
+products/
+product-images/
+
+# === CONFIG FILES TO KEEP PRIVATE ===
+
+# Spring Boot config
+application.properties
+application.yml
