@@ -153,7 +153,7 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login]("./assests/login.png")
+![Login](./assests/login.png)
 
 ### 📊 Dashboard
 ![Dashboard](./assests/dashboard.png)
@@ -161,15 +161,8 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ### 📦 Product List
 ![Products](./assests/product.png)
 
-### ➕ Add Product
-![Add Product](./public/readme-images/add-product.png)
+### ➕ Transactions page
+![Add Product](./assests/Transactions.png)
 
-### 🖼️ Image Upload Preview
-![Upload Preview](./public/readme-images/upload-preview.png)
 
-### 🧾 Purchase Form
-![Purchase](./public/readme-images/purchase.png)
-
-### 🛒 Sales Form
-![Sales](./public/readme-images/sale.png)
 
