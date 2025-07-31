@@ -153,13 +153,13 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login]("C:\Users\Niteesh Kumar\OneDrive\Pictures\Screenshots\Screenshot 2025-07-31 150230.png")
+![Login]("./assests/login.png")
 
 ### 📊 Dashboard
-![Dashboard](./public/readme-images/dashboard.png)
+![Dashboard](./assests/dashboard.png)
 
 ### 📦 Product List
-![Products](./public/readme-images/products.png)
+![Products](./assests/product.png)
 
 ### ➕ Add Product
 ![Add Product](./public/readme-images/add-product.png)
