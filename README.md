@@ -150,3 +150,26 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 - Image Store	Public folder (/products/)
 - Auth	Token-based (JWT)
 
+## 📸 Screenshots
+
+### 🔐 Login Page
+![Login](./public/readme-images/login.png)
+
+### 📊 Dashboard
+![Dashboard](./public/readme-images/dashboard.png)
+
+### 📦 Product List
+![Products](./public/readme-images/products.png)
+
+### ➕ Add Product
+![Add Product](./public/readme-images/add-product.png)
+
+### 🖼️ Image Upload Preview
+![Upload Preview](./public/readme-images/upload-preview.png)
+
+### 🧾 Purchase Form
+![Purchase](./public/readme-images/purchase.png)
+
+### 🛒 Sales Form
+![Sales](./public/readme-images/sale.png)
+
