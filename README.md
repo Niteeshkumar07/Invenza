@@ -211,7 +211,7 @@ Run the application:
 mvn spring-boot:run
 ```
 The backend will run at: http://localhost:8080
-```
+
 
 # 🌐 Frontend Setup (React + Vite + Tailwind)
 Open a new terminal:
@@ -220,9 +220,9 @@ Open a new terminal:
 cd inventory-management-system/ims-frontend
 ```
 
-```
-Install dependencies:
 
+Install dependencies:
+```
 npm install
 npm install axios react-router-dom recharts
 ```
