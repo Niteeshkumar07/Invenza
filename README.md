@@ -164,5 +164,80 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ### ➕ Transactions page
 ![Add Product](./assests/Transactions.png)
 
+# 🚀 Getting Started
+Follow these steps to set up the Inventory Management System locally.
+
+🔧 **Prerequisites**
+Make sure you have the following installed on your machine:
+
+- Node.js (v18+)
+
+- Java JDK (17+)
+
+- MySQL Server
+
+- Maven
+
+🖥️ **Backend Setup (Spring Boot)**
+Clone the repository (if not already):
+
+```bash
+
+git clone https://github.com/your-username/inventory-management-system.git
+cd inventory-management-system/ims-backend
+```
+
+**Create MySQL Database:**
+```
+CREATE DATABASE inventory;
+```
+
+**Configure application.properties:**
+
+```
+src/main/resources/application.properties
+```
+
+Update DB credentials:
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/inventory
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
+```
+
+Run the application:
+```
+mvn spring-boot:run
+```
+The backend will run at: http://localhost:8080
+```
+
+# 🌐 Frontend Setup (React + Vite + Tailwind)
+Open a new terminal:
+
+```
+cd inventory-management-system/ims-frontend
+```
+
+```
+Install dependencies:
+
+npm install
+npm install axios react-router-dom recharts
+```
+Run the development server:
+```
+npm run dev
+```
+The frontend will be available at: http://localhost:5173
+
+📝 License
+This project is licensed under the MIT License.
+
+You are free to use, modify, and distribute this software for personal or commercial purposes, provided that the original license and copyright
+notice are included.
+
+See the LICENSE file for full details.
 
 
