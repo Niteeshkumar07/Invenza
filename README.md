@@ -232,7 +232,8 @@ npm run dev
 ```
 The frontend will be available at: http://localhost:5173
 
-📝 License
+# 📝 License
+
 This project is licensed under the MIT License.
 
 You are free to use, modify, and distribute this software for personal or commercial purposes, provided that the original license and copyright
