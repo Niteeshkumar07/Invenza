@@ -230,7 +230,7 @@ Run the development server:
 ```
 npm run dev
 ```
-The frontend will be available at: http://localhost:5173
+The frontend will be available at: http://localhost:3000
 
 # 📝 License
 
