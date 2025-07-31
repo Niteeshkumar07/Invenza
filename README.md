@@ -153,7 +153,7 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login](./public/readme-images/login.png)
+![Login]("C:\Users\Niteesh Kumar\OneDrive\Pictures\Screenshots\Screenshot 2025-07-31 150230.png")
 
 ### 📊 Dashboard
 ![Dashboard](./public/readme-images/dashboard.png)
