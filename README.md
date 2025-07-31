@@ -2,4 +2,16 @@
 A full-stack Inventory Management System built using React.js + Tailwind CSS (frontend) and Spring Boot + MySQL (backend). This system allows store admins to manage products, suppliers, categories, purchases, and sales with support for JWT-based role authentication and image upload support.
 
 # 🔍 Overview
-This Inventory Management System helps businesses track their stock, manage suppliers and customers, and analyze purchase and sales data. It offers a responsive and intuitive UI with real-time inventory updates.
+-📦 Helps businesses track stock levels in real-time.
+
+-👥 Manages both suppliers and customers efficiently.
+
+-🧾 Keeps record of purchase and sales transactions.
+
+-📊 Provides visual analytics dashboards to track trends.
+
+-⚡ Offers a beautiful and intuitive UI built with React and CSS.
+
+-🔄 Enables real-time updates across the system on every transaction.
+
+-🖼️ Supports image uploads for products stored locally.
