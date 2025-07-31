@@ -183,7 +183,7 @@ Clone the repository (if not already):
 
 ```bash
 
-git clone https://github.com/your-username/inventory-management-system.git
+git clone https://github.com/your-username/Invenza.git
 cd inventory-management-system/ims-backend
 ```
 
