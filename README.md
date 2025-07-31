@@ -15,3 +15,12 @@ A full-stack Inventory Management System built using React.js + CSS (frontend) a
 - 🔄 Enables real-time updates across the system on every transaction.
 
 - 🖼️ Supports image uploads for products stored locally.
+  
+
+# 🗂️ Project Structure
+```bash
+          Invenza/
+                 ├── backend/ # Spring Boot backend
+                 ├── frontend/ # React.js frontend 
+```
+
