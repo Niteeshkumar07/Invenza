@@ -17,7 +17,6 @@ const DashboardPage = () => {
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [selectedData, setSelectedData] = useState("amount");
-  //veruble to store and set transaction data formated for chart display
   const [transactionData, setTransactionData] = useState([]);
 
   useEffect(() => {
@@ -25,7 +24,7 @@ const DashboardPage = () => {
       try {
         const transactionResponse = await ApiService.getAllTransactions();
         if (transactionResponse.status === 200) {
-            setTransactionData(
+          setTransactionData(
             transformTransactionData(
               transactionResponse.transactions,
               selectedMonth,
@@ -35,7 +34,7 @@ const DashboardPage = () => {
         }
       } catch (error) {
         showMessage(
-          error.response?.data?.message || "Error Loggin in a User: " + error
+          error.response?.data?.message || "Error fetching transactions: " + error
         );
       }
     };
@@ -44,10 +43,9 @@ const DashboardPage = () => {
 
   const transformTransactionData = (transactions, month, year) => {
     const dailyData = {};
-    //get nimber of dayas in the selected month year
-    const daysInMonths = new Date(year, month, 0).getDate();
-    //initilaize each day in the month with default values
-    for (let day = 1; day <= daysInMonths; day++) {
+    const daysInMonth = new Date(year, month, 0).getDate();
+
+    for (let day = 1; day <= daysInMonth; day++) {
       dailyData[day] = {
         day,
         count: 0,
@@ -55,30 +53,27 @@ const DashboardPage = () => {
         amount: 0,
       };
     }
-    //process each transactions to accumulate daily counts, quantity and amount
+
     transactions.forEach((transaction) => {
       const transactionDate = new Date(transaction.createdAt);
       const transactionMonth = transactionDate.getMonth() + 1;
       const transactionYear = transactionDate.getFullYear();
 
-      //If transaction falls withing selected month and year, accumulate data for the day
       if (transactionMonth === month && transactionYear === year) {
         const day = transactionDate.getDate();
         dailyData[day].count += 1;
-        dailyData[day].quantity += transaction.totalProducts;
-        dailyData[day].amount += transaction.totalPrice;
+        dailyData[day].quantity += Number(transaction.totalProducts) || 0;
+        dailyData[day].amount += Number(transaction.totalPrice) || 0;
       }
     });
-    //convert dailyData object for chart compatibility
-    return Object.values(dailyData);
+
+    return Object.values(dailyData).sort((a, b) => a.day - b.day);
   };
 
-  //event handler for month selection or change
   const handleMonthChange = (e) => {
     setSelectedMonth(parseInt(e.target.value, 10));
   };
 
-  //event handler for year selection or change
   const handleYearChange = (e) => {
     setSelectedYear(parseInt(e.target.value, 10));
   };
@@ -88,6 +83,13 @@ const DashboardPage = () => {
     setTimeout(() => {
       setMessage("");
     }, 4000);
+  };
+
+  const formatCurrency = (value) => {
+    if (value >= 1e9) return `$${(value / 1e9).toFixed(1)}B`;
+    if (value >= 1e6) return `$${(value / 1e6).toFixed(1)}M`;
+    if (value >= 1e3) return `$${(value / 1e3).toFixed(1)}K`;
+    return `$${value}`;
   };
 
   return (
@@ -102,10 +104,8 @@ const DashboardPage = () => {
             Product Quantity
           </button>
           <button onClick={() => setSelectedData("amount")}>Amount</button>
-
         </div>
 
-        
         <div className="dashboard-content">
           <div className="filter-section">
             <label htmlFor="month-select">Select Month:</label>
@@ -130,46 +130,53 @@ const DashboardPage = () => {
             </select>
           </div>
 
-          {/* Display the chart */}
+          {/* Chart Section */}
           <div className="chart-section">
             <div className="chart-container">
-                <h3>Daily Transactions</h3>
-                <ResponsiveContainer width="100%" height={400}>
-  <LineChart
-    data={transactionData}
-    margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
-  >
-    <CartesianGrid strokeDasharray="3 3" />
-    <XAxis
-      dataKey="day"
-      label={{ value: "Day", position: "insideBottomRight", offset: -5 }}
-      tick={{ fontSize: 12 }}
-      padding={{ left: 10, right: 10 }}
-      interval={0}
-      minTickGap={5}
-    />
-    <YAxis />
-    <Tooltip />
-    <Legend />
-    <Line
-      type="monotone"
-      dataKey={selectedData}
-      stroke="#008080"
-      fillOpacity={0.3}
-      fill="#008080"
-    />
-  </LineChart>
-</ResponsiveContainer>
-
-
+              <h3>Daily Transactions</h3>
+              <ResponsiveContainer width="100%" height={400}>
+                <LineChart
+                  data={transactionData}
+                  margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis
+                    dataKey="day"
+                    label={{ value: "Day", position: "insideBottomRight", offset: -5 }}
+                    tick={{ fontSize: 12 }}
+                    padding={{ left: 10, right: 10 }}
+                    interval={0}
+                    minTickGap={5}
+                  />
+                  <YAxis
+                    tickFormatter={(value) =>
+                      selectedData === "amount" ? formatCurrency(value) : value
+                    }
+                  />
+                  <Tooltip
+                    formatter={(value, name) =>
+                      name === "amount"
+                        ? [formatCurrency(value), "Amount"]
+                        : [value, name === "count" ? "Transactions" : "Quantity"]
+                    }
+                  />
+                  <Legend />
+                  <Line
+                    type="monotone"
+                    dataKey={selectedData}
+                    stroke="#008080"
+                    strokeWidth={2}
+                    dot={{ r: 3 }}
+                    activeDot={{ r: 5 }}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
             </div>
-
           </div>
-
-
         </div>
       </div>
     </Layout>
   );
 };
+
 export default DashboardPage;
