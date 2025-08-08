@@ -156,7 +156,7 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ![Login](./assests/login.png)
 
 ### 📊 Dashboard
-![Dashboard](./assests/dashboard.png)
+![Dashboard](./assests/new.png)
 
 ### 📦 Product List
 ![Products](./assests/product.png)
