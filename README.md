@@ -159,7 +159,7 @@ The system uses charts (e.g., LineChart, BarChart) to visualize:
 ![Dashboard](./assests/dashboard.png)
 
 ### 📦 Product List
-![Products](./assests/products.png)
+![Products](./assests/product.png)
 
 ### ➕ Transactions page
 ![Add Product](./assests/Transactions.png)
